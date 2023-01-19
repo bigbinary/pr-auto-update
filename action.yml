@@ -1,12 +1,15 @@
 name: Auto-update
-author: Thibault Derousseaux <tibdex@gmail.com>
+author: Unnikrishnan KP
 description: Automatically keep pull requests with auto-merged enabled up to date with their base branch.
 inputs:
   github_token:
     description: Token for the GitHub API.
     required: true
+  skip_labels:
+    description: Blacklist of labels which when added to a PR, this action will be skipped
+    required: true
 runs:
-  using: node12
+  using: node16
   main: dist/index.js
 branding:
   icon: refresh-cw
